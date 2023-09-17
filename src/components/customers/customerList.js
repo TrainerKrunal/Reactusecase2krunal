@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 export default function CustomerList() {
 
-    const baseURL = "http://localhost:9009/api/v1/scb/loan/mycust";
+    const baseURL = "http://localhost:9009/api/v1/malaysia/";
 
     const [customers, setCustomers] = useState(customerData);
     const [selectedCustomer, setSelectedCustomer] = useState(null);
@@ -68,7 +68,8 @@ export default function CustomerList() {
                 </thead>
                 <tbody>
                     {
-                        customers.map((customer) =><tr key={customer.id} onClick={() => onCustomerSelect(customer)} >
+                        customers.map((customer) =><tr key={customer.id} 
+                        onClick={() => onCustomerSelect(customer)} >
                                     <td>{customer.id}</td>
                                     <td>{customer.name}</td>
                                     <td>{customer.accountType}</td>

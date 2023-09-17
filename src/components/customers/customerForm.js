@@ -6,7 +6,7 @@ import axios from "axios";
 
 export default function CustomerForm(props) {
 
-    const baseURL = "http://localhost:9009/api/v1/scb/loan/mycust";
+    const baseURL = "http://localhost:9009/api/v1/malaysia/";
 
     const [formData,setNewFormData] = useState({
       id:0,
@@ -33,11 +33,14 @@ export default function CustomerForm(props) {
     useEffect(() => {
     
         loadCustomer();
+       // if we get new value for props.id it will trigger loadCustomer() again , 
+    //if the value is same then it will not
 
-    }, [props.id]);  // if we get new value for props.id it will trigger loadCustomer() again , if the value is same then it will not
+    }, [props.id]);  
 
     const loadCustomer = async () => {
         if (props.id > 0) {
+            //http://localhost:9009/api/v1/malaysia/customers/1
             const apiEndPoint = `${baseURL}/customers/${props.id}`; 
             const result = await axios.get(apiEndPoint);
             setNewFormData(result.data.body);

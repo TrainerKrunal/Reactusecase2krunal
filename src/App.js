@@ -13,10 +13,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App(){
 
-    const myFunc=()=>{
-      alert("1");
-    }
-
   return(
     <div className='container'>
       <ToastContainer />
